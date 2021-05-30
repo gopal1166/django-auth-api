@@ -126,6 +126,7 @@ example path file path: `project/app/serializers.py`
     }
     ```
     ### Testing login api
+    endpoint: `/dj-rest-auth/login/ (POST)`
     body: json
     ```
     {
