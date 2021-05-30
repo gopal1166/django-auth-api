@@ -50,4 +50,25 @@ package: `dj-rest-auth`
     
     SITE_ID = 1
     ```
-
+3. Add `dj_rest_auth.registration` urls:
+    ```
+    urlpatterns = [
+        ...,
+        path('dj-rest-auth/', include('dj_rest_auth.urls')),
+        path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls'))
+    ]
+    ```
+    #### Testing:
+    endpoint: `/dj-rest-auth/registration/ (POST)`
+    body: json
+    ```
+    {
+        username: ""
+        email: ""
+        password1: ""
+        password2: ""
+    }
+    ```
+    Sample output: 
+    `{key: 'token string'}`
+    
