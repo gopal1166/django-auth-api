@@ -33,7 +33,7 @@ package: `dj-rest-auth`
 4. Migrate your database: ```$ python manage.py migrate```
 5. d
 6. d
-### Registration api:
+### 1. Registration api:
 ---
 1. install `django-allauth` using below and verify:
 `pip install 'dj-rest-auth[with_social]'`
@@ -72,3 +72,92 @@ package: `dj-rest-auth`
     Sample output: 
     `{key: 'token string'}`
     
+### 2. Login api:
+---
+To get the user info along with token, follow these
+
+1.  in settings.py:
+    ```
+    # To use token authentication
+    REST_FRAMEWORK = {
+        'DEFAULT_AUTHENTICATION_CLASSES': [
+            'rest_framework.authentication.TokenAuthentication',
+        ],
+    }
+    
+    # all-auth settings to use email instead of username for login
+    ACCOUNT_AUTHENTICATION_METHOD = 'email'
+    ACCOUNT_EMAIL_REQUIRED = True
+    ACCOUNT_USERNAME_REQUIRED = False
+
+    AUTHENTICATION_BACKENDS = [
+        # Needed to login by username in Django admin, regardless of allauth
+        'django.contrib.auth.backends.ModelBackend',
+    
+        # allauth specific authentication methods, such as login by e-mail
+        'allauth.account.auth_backends.AuthenticationBackend',
+    ]
+    ```
+2.  Define custom Token Serializer 
+example path file path: `project/app/serializers.py`
+    ```
+    from rest_framework import serializers
+    from django.contrib.auth import get_user_model
+    from rest_framework.authtoken.models import Token
+    
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = get_user_model()
+            fields = ('id', 'username', 'email')
+    
+    
+    # serializers.ModelSerializer
+    class MyCustomTokenSerializer(serializers.ModelSerializer):
+        user = UserSerializer(read_only=True)
+    
+        class Meta:
+            model = Token
+            fields = ('key', 'user')
+    ```
+3.  wire it to `TOKEN_SERIALIZER` in settings.py
+    ```
+    REST_AUTH_SERIALIZERS = {
+        'TOKEN_SERIALIZER': 'accounts_app.serializers.MyCustomTokenSerializer'
+    }
+    ```
+    ### Testing login api
+    body: json
+    ```
+    {
+        email: "user email",
+        password: "user password"
+    }
+    ```
+    sample output:
+    ```
+    {
+        key: "token string",
+        user:
+    }
+    ```
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
