@@ -37,8 +37,7 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
 6. d
 ### 1. Registration api:
 ---
-1. install `django-allauth` using below and verify:
-`pip install 'dj-rest-auth[with_social]'`
+1. install `django-allauth` using `pip install 'dj-rest-auth[with_social]'`
 2. in settings.py
     ```
     INSTALLED_APPS = (
