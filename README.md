@@ -155,9 +155,9 @@ To get the user info along with token, follow these
 
 ### 4. Password reset:
 ---
-  #### Testing:
-  Api endpoint: `/dj-rest-auth/password/reset/ (POST)`
-  Body (json): `{ email: "user email" }`
+  #### Testing:  
+  Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
+  Body (json): `{ email: "user email" }`  
   Sample output: `{ "detail": "Password reset e-mail has been sent." }`
   
   On success api call, an email will be sent with reset url like below  
