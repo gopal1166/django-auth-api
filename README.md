@@ -6,7 +6,8 @@
 3. password reset
 4. password reset confirm
 
-package: `dj-rest-auth`
+package used: `dj-rest-auth`
+requirements: `django==3.2.3  psycopg2==2.8.6 djangorestframework==3.12.4`
 [Official Website](https://dj-rest-auth.readthedocs.io/en/latest/)  
 
 ### Installation:
@@ -33,8 +34,30 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
         path('dj-rest-auth/', include('dj_rest_auth.urls'))
     ]   
     ```
-4. Migrate your database: ```$ python manage.py migrate```  
-
+4. add these in settings.py file:  
+    ```
+    # To use token authentication
+      REST_FRAMEWORK = {
+          'DEFAULT_AUTHENTICATION_CLASSES': [
+              'rest_framework.authentication.TokenAuthentication',
+          ],
+      }
+      
+      # all-auth settings to use email instead of username for login
+      ACCOUNT_AUTHENTICATION_METHOD = 'email'
+      ACCOUNT_EMAIL_REQUIRED = True
+      ACCOUNT_USERNAME_REQUIRED = False
+  
+      AUTHENTICATION_BACKENDS = [
+        # Needed to login by username in Django admin, regardless of allauth
+        'django.contrib.auth.backends.ModelBackend',
+    
+        # allauth specific authentication methods, such as login by e-mail
+        'allauth.account.auth_backends.AuthenticationBackend',
+      ]
+    ```
+  5. Migrate your database: ```$ python manage.py migrate```  
+  
 &nbsp;
 ### 1. Registration api:
 ---
@@ -78,28 +101,6 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
 ---
 To get the user info along with token, follow these
 
-1.  in settings.py, adde these below:
-    ```
-    # To use token authentication
-    REST_FRAMEWORK = {
-        'DEFAULT_AUTHENTICATION_CLASSES': [
-            'rest_framework.authentication.TokenAuthentication',
-        ],
-    }
-    
-    # all-auth settings to use email instead of username for login
-    ACCOUNT_AUTHENTICATION_METHOD = 'email'
-    ACCOUNT_EMAIL_REQUIRED = True
-    ACCOUNT_USERNAME_REQUIRED = False
-
-    AUTHENTICATION_BACKENDS = [
-      # Needed to login by username in Django admin, regardless of allauth
-      'django.contrib.auth.backends.ModelBackend',
-  
-      # allauth specific authentication methods, such as login by e-mail
-      'allauth.account.auth_backends.AuthenticationBackend',
-    ]
-    ```
 2.  Define custom Token Serializer.  
     example path file path: `project/app/serializers.py`
     ```
