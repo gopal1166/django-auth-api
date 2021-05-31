@@ -6,6 +6,7 @@ Reference:
 [PasswordResetSerializer](https://github.com/Tivix/django-rest-auth/blob/master/rest_auth/serializers.py)  ,  
 [PasswordResetForm](https://docs.djangoproject.com/en/1.8/_modules/django/contrib/auth/forms/)  
 
+> Note: Must add the `path('', include('django.contrib.auth.urls')),` in urlpatterns in urls.py
 
 ### 1. Password Reset:
 ---
