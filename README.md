@@ -23,7 +23,7 @@ package: `dj-rest-auth`
     )
     ```
 
->   Note: This project depends on `django-rest-framework` library,  
+> Note: This project depends on `django-rest-framework` library,  
 so install it if you haven’t done yet.  
 Make sure also you have installed `rest_framework` and `rest_framework.authtoken` apps
 3. Add dj_rest_auth urls:
@@ -33,9 +33,9 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
         path('dj-rest-auth/', include('dj_rest_auth.urls'))
     ]   
     ```
-4. Migrate your database: ```$ python manage.py migrate```
-5. d
-6. d
+4. Migrate your database: ```$ python manage.py migrate```  
+
+&nbsp;
 ### 1. Registration api:
 ---
 1. install `django-allauth` using `pip install 'dj-rest-auth[with_social]'`
@@ -152,10 +152,10 @@ To get the user info along with token, follow these
 &nbsp;   
 ### 3. logout:
 ---
-    Api endpoint: `/dj-rest-auth/logout/ (POST)`  
-    Body: json  
-    > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True`  
-    to use GET instead of POST    
+  Api endpoint: `/dj-rest-auth/logout/ (POST)`  
+  Body: json  
+  > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True`  
+  to use GET instead of POST    
     
 &nbsp;  
 ### 4. Password reset:
