@@ -9,8 +9,9 @@ Reference:
 
 ### 1. Password Reset:
 ---
-1.  create custom serializer from PasswordResetSerializer in serializers.py
-    add `'html_email_template_name', 'domain_override'`
+1.  Create custom serializer from PasswordResetSerializer in serializers.py
+    should override `save()` method and  
+    add `'html_email_template_name', 'domain_override'` in opts in that.
     ```
     from dj_rest_auth.serializers import PasswordResetSerializer  
     from rest_framework import serializers  
