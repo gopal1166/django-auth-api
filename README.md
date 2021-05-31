@@ -129,7 +129,7 @@ To get the user info along with token, follow these
     ```
     ##### Testing login api:    
     
-    **endpoint:** `/dj-rest-auth/login/ (POST)`  
+    api endpoint: `/dj-rest-auth/login/ (POST)`  
     body: json
     ```
     {
