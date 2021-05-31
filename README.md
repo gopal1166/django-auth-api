@@ -159,48 +159,48 @@ To get the user info along with token, follow these
 &nbsp;  
 ### 4. Password reset:
 ---
-    #### Testing:  
-    Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
-    Body (json): `{ email: "user email" }`  
-    Sample output: `{ "detail": "Password reset e-mail has been sent." }`
+  #### Testing:  
+  Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
+  Body (json): `{ email: "user email" }`  
+  Sample output: `{ "detail": "Password reset e-mail has been sent." }`
     
-    On success api call, an email will be sent with reset url like below  
-    `protocol://domain/reset/uid/token/`.
-    ```
-    Dear Gopal,
+  On success api call, an email will be sent with reset url like below  
+  `protocol://domain/reset/uid/token/`.
+  ```
+  Dear Gopal,
   
-    Please go to the following page and choose a new password:
-    http://localhost:3000/reset/Mw/ani3u8-197abc2c67ea7bb1b01cdef90e96017a/
-    Thanks for using our site!
-    
-    The localhost:3000 team
-    ```
+  Please go to the following page and choose a new password:
+  http://localhost:3000/reset/Mw/ani3u8-197abc2c67ea7bb1b01cdef90e96017a/
+  Thanks for using our site!
   
-    On click of the link this email, **`frontend application should handle this`**.  
-    Need to extract `uid, token` from the url and make  
-    password reset confirm api call, using below api and payload.    
+  The localhost:3000 team
+  ```
+  
+  On click of the link this email, **`frontend application should handle this`**.  
+  Need to extract `uid, token` from the url and make  
+  password reset confirm api call, using below api and payload.    
     
   &nbsp;
   ### 5. Password reset confirm
   ---
   
-    Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`  
-    Body: 
-    ```
-    {
-      uid: "",
-      token: "",
-      new_password1: "",
-      new_password2: ""
-    }
-    ```
+  Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`  
+  Body: 
+  ```
+  {
+    uid: "",
+    token: "",
+    new_password1: "",
+    new_password2: ""
+  }
+  ```
     
-    Sample output: 
-    ```
-    {
-      "detail": "Password has been reset with the new password."
-    }
-    ```
+  Sample output: 
+  ```
+  {
+    "detail": "Password has been reset with the new password."
+  }
+  ```
   
   
 
