@@ -127,7 +127,8 @@ To get the user info along with token, follow these
         'TOKEN_SERIALIZER': 'accounts_app.serializers.MyCustomTokenSerializer'
     }
     ```
-    ### Testing login api
+    ##### Testing login api:    
+    
     **endpoint:** `/dj-rest-auth/login/ (POST)`  
     body: json
     ```
@@ -159,7 +160,7 @@ To get the user info along with token, follow these
 &nbsp;  
 ### 4. Password reset:
 ---
-  #### Testing:  
+  ##### Testing:  
   Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
   Body (json): `{ email: "user email" }`  
   Sample output: `{ "detail": "Password reset e-mail has been sent." }`
