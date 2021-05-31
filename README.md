@@ -29,6 +29,8 @@ so install it if you haven’t done yet.
 Make sure also you have installed `rest_framework` and `rest_framework.authtoken` apps
 3. Add dj_rest_auth urls:
     ```
+    from django.urls import path, include  
+    
     urlpatterns = [
         ...,
         path('dj-rest-auth/', include('dj_rest_auth.urls'))
@@ -55,6 +57,17 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
         # allauth specific authentication methods, such as login by e-mail
         'allauth.account.auth_backends.AuthenticationBackend',
       ]
+      
+      # To send email
+      # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'   # To console
+      EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+      EMAIL_USE_TLS = True
+      EMAIL_HOST = 'smtp.gmail.com'
+      EMAIL_PORT = 587
+      EMAIL_HOST_USER = 'vgopal1166@gmail.com'
+      EMAIL_HOST_PASSWORD = 'ujlmjkfvutzjhghf'
+      
+      DEFAULT_FROM_EMAIL = 'vgopal1166@gmail.com'
     ```
   5. Migrate your database: ```$ python manage.py migrate```  
   
