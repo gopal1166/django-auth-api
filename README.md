@@ -173,8 +173,8 @@ To get the user info along with token, follow these
   ```
 
   On click of the link this email, **`frontend application should handle this`**.  
-  Need to extract uid, token from the url andmake an api call  
-  to password reset confirm using below api and payload.
+  Need to extract `uid, token` from the url and make  
+  password reset confirm api call, using below api and payload.
   
 ### 5. Password reset confirm
 ---
