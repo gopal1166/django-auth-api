@@ -9,7 +9,7 @@ Reference:
 
 ### 1. Password Reset:
 ---
-1.  Create custom serializer from PasswordResetSerializer in serializers.py
+1.  Create custom serializer from PasswordResetSerializer in serializers.py in root ,
     should override `save()` method and  
     add `'html_email_template_name', 'domain_override'` in opts in that.
     ```
@@ -41,7 +41,7 @@ Reference:
 2.  Register this in settings.py
     ```
     REST_AUTH_SERIALIZERS = {
-      'PASSWORD_RESET_SERIALIZER': 'accounts_app.serializers.CustomPasswordResetSerializer'
+      'PASSWORD_RESET_SERIALIZER': 'serializers.CustomPasswordResetSerializer'
     }
     ```
 3.  Create reset_email.html in project_root/templates with below content  
