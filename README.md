@@ -7,7 +7,7 @@
 4. password reset confirm
 
 package: `dj-rest-auth`
-[Official Website](https://dj-rest-auth.readthedocs.io/en/latest/)
+[Official Website](https://dj-rest-auth.readthedocs.io/en/latest/)  
 
 ### Installation:
 ---
@@ -201,7 +201,12 @@ To get the user info along with token, follow these
   {
     "detail": "Password has been reset with the new password."
   }
-  ```
+  ```    
+  
+  &nbsp;
+  Reference for customizing password reset template :  
+[PasswordResetSerializer](https://github.com/Tivix/django-rest-auth/blob/master/rest_auth/serializers.py)  ,  
+[PasswordResetForm](https://docs.djangoproject.com/en/1.8/_modules/django/contrib/auth/forms/)  
   
   
 
