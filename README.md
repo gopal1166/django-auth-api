@@ -22,7 +22,9 @@ package: `dj-rest-auth`
     )
     ```
 
->   Note: This project depends on `django-rest-framework` library, so install it if you haven’t done yet. Make sure also you have installed `rest_framework` and `rest_framework.authtoken` apps
+>   Note: This project depends on `django-rest-framework` library,  
+so install it if you haven’t done yet.  
+Make sure also you have installed `rest_framework` and `rest_framework.authtoken` apps
 3. Add dj_rest_auth urls:
     ```
     urlpatterns = [
