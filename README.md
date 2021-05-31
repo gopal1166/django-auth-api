@@ -126,7 +126,7 @@ example path file path: `project/app/serializers.py`
     }
     ```
     ### Testing login api
-    endpoint: `/dj-rest-auth/login/ (POST)`
+    **endpoint:** `/dj-rest-auth/login/ (POST)`
     body: json
     ```
     {
@@ -134,14 +134,64 @@ example path file path: `project/app/serializers.py`
         password: "user password"
     }
     ```
-    sample output:
+    **sample output:**
     ```
     {
-        key: "token string",
-        user:
+      "key": "b78a86dfebfca796230f095167ba2c769407efcc",
+      "user": {
+          "id": 3,
+          "username": "Gopal",
+          "email": "vgopal1166@gmail.com"
+      }
     }
     ```
 
+3. logout:
+---
+  Api endpoint: `/dj-rest-auth/logout/ (POST)`
+  Body: json
+  > Note(Not Recommended): `ACCOUNT_LOGOUT_ON_GET = True` to use GET instead of POST
+
+### 4. Password reset:
+---
+  #### Testing:
+  Api endpoint: `/dj-rest-auth/password/reset/ (POST)`
+  Body (json): `{ email: "user email" }`
+  Sample output: `{ "detail": "Password reset e-mail has been sent." }`
+  
+  On success api call, an email will be sent with reset url like below `protocol://domain/reset/uid/token/`.
+  ```
+  Dear Gopal,
+
+  Please go to the following page and choose a new password:
+  http://localhost:3000/reset/Mw/ani3u8-197abc2c67ea7bb1b01cdef90e96017a/
+  Thanks for using our site!
+  
+  The localhost:3000 team
+  ```
+
+  On click of the link this email, **`frontend application should handle this`**.
+  Need to extract uid, token from the url and make an api call to password reset confirm using below api and payload.
+  
+  Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`
+  Body: 
+  ```
+  {
+    uid: "",
+    token: "",
+    new_password1: "",
+    new_password2: ""
+  }
+  ```
+  
+  Sample output: 
+  ```
+  {
+    "detail": "Password has been reset with the new password."
+  }
+  ```
+  
+  
 
 
     
