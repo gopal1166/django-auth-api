@@ -151,56 +151,56 @@ To get the user info along with token, follow these
 &nbsp;   
 ### 3. logout:
 ---
-  Api endpoint: `/dj-rest-auth/logout/ (POST)`  
-  Body: json  
-  > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True`  
-  to use GET instead of POST    
-  
+    Api endpoint: `/dj-rest-auth/logout/ (POST)`  
+    Body: json  
+    > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True`  
+    to use GET instead of POST    
+    
 &nbsp;  
 ### 4. Password reset:
 ---
-  #### Testing:  
-  Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
-  Body (json): `{ email: "user email" }`  
-  Sample output: `{ "detail": "Password reset e-mail has been sent." }`
+    #### Testing:  
+    Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
+    Body (json): `{ email: "user email" }`  
+    Sample output: `{ "detail": "Password reset e-mail has been sent." }`
+    
+    On success api call, an email will be sent with reset url like below  
+    `protocol://domain/reset/uid/token/`.
+    ```
+    Dear Gopal,
   
-  On success api call, an email will be sent with reset url like below  
-  `protocol://domain/reset/uid/token/`.
-  ```
-  Dear Gopal,
-
-  Please go to the following page and choose a new password:
-  http://localhost:3000/reset/Mw/ani3u8-197abc2c67ea7bb1b01cdef90e96017a/
-  Thanks for using our site!
+    Please go to the following page and choose a new password:
+    http://localhost:3000/reset/Mw/ani3u8-197abc2c67ea7bb1b01cdef90e96017a/
+    Thanks for using our site!
+    
+    The localhost:3000 team
+    ```
   
-  The localhost:3000 team
-  ```
-
-  On click of the link this email, **`frontend application should handle this`**.  
-  Need to extract `uid, token` from the url and make  
-  password reset confirm api call, using below api and payload.    
+    On click of the link this email, **`frontend application should handle this`**.  
+    Need to extract `uid, token` from the url and make  
+    password reset confirm api call, using below api and payload.    
+    
+  &nbsp;
+  ### 5. Password reset confirm
+  ---
   
-&nbsp;
-### 5. Password reset confirm
----
-
-  Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`  
-  Body: 
-  ```
-  {
-    uid: "",
-    token: "",
-    new_password1: "",
-    new_password2: ""
-  }
-  ```
-  
-  Sample output: 
-  ```
-  {
-    "detail": "Password has been reset with the new password."
-  }
-  ```
+    Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`  
+    Body: 
+    ```
+    {
+      uid: "",
+      token: "",
+      new_password1: "",
+      new_password2: ""
+    }
+    ```
+    
+    Sample output: 
+    ```
+    {
+      "detail": "Password has been reset with the new password."
+    }
+    ```
   
   
 
