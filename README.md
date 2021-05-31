@@ -1,4 +1,5 @@
 ## Django authentication end points
+---
 1. register
 2. login
 2. logout
