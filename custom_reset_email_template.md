@@ -38,13 +38,13 @@ Reference:
     ```
 
    
-2.  register this in settings.py
+2.  Register this in settings.py
     ```
     REST_AUTH_SERIALIZERS = {
-    'PASSWORD_RESET_SERIALIZER': 'accounts_app.serializers.CustomPasswordResetSerializer'
-}
+      'PASSWORD_RESET_SERIALIZER': 'accounts_app.serializers.CustomPasswordResetSerializer'
+    }
     ```
-3.  create reset_email.html in project_root/templates with below content  
+3.  Create reset_email.html in project_root/templates with below content  
     ```
     Dear {{ user.get_username }},<br><br>
     
@@ -58,7 +58,7 @@ Reference:
     
     The {{ site_name }} team
     ```
-4.  wire up templates folder to 'DIRS' in TEMPLATES in settings.py
+4.  Wire up templates folder to 'DIRS' in TEMPLATES in settings.py
     ```
     TEMPLATES = [
       {
@@ -69,26 +69,27 @@ Reference:
     ]
     ```
 
-5.  Testing the api:
-    api endpoint: `/dj-rest-auth/password/reset/`    (POST)  
-    body:  `{ email: "registered user email" }`  
+##### Testing the api:  
+---  
+  api endpoint: `/dj-rest-auth/password/reset/`    (POST)  
+  body:  `{ email: "registered user email" }`  
 
-    On api call succeess, email be sent with below content.  
-    ```
-    Dear Gopal,
+  On api call succeess, email be sent with below content.  
+  ```
+  Dear Gopal,
 
-    Please go to the following page and choose a new password:
-    http://localhost:3000/password/reset/Mw/anif7y-67ad436d7c271955ebce4e18b8d9d98e/
-    Thanks for using our site!
-    
-    The localhost:3000 team
-    ```
+  Please go to the following page and choose a new password:
+  http://localhost:3000/password/reset/Mw/anif7y-67ad436d7c271955ebce4e18b8d9d98e/
+  Thanks for using our site!
+  
+  The localhost:3000 team
+  ```
 
-    On click of the link this email, frontend application should handle this.  
-    Need to extract uid, token from the url and   
-    make password reset confirm api call, using below api and payload  
-    
-    
+  On click of the link this email, **frontend application should handle this.**  
+  Need to extract uid, token from the url and   
+  make password reset confirm api call, using below api and payload  
+  
+&nbsp;
 ### 2. Password Reset confirm:
 ---
 Api endpoint: `/dj-rest-auth/password/reset/confirm/` (POST)  
