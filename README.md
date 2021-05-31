@@ -173,7 +173,10 @@ To get the user info along with token, follow these
     
 &nbsp;  
 ### 4. Password reset:
----
+---  
+
+* Must add the `path('', include('django.contrib.auth.urls')),` in urlpatterns in urls.py
+
   ##### Testing:  
   Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
   Body (json): `{ email: "user email" }`  
