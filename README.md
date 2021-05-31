@@ -146,11 +146,11 @@ example path file path: `project/app/serializers.py`
     }
     ```
 
-3. logout:
+### 3. logout:
 ---
   Api endpoint: `/dj-rest-auth/logout/ (POST)`
   Body: json
-  > Note(Not Recommended): `ACCOUNT_LOGOUT_ON_GET = True` to use GET instead of POST
+  > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True` to use GET instead of POST
 
 ### 4. Password reset:
 ---
@@ -173,6 +173,9 @@ example path file path: `project/app/serializers.py`
   On click of the link this email, **`frontend application should handle this`**.
   Need to extract uid, token from the url and make an api call to password reset confirm using below api and payload.
   
+### 5. Password reset confirm
+---
+
   Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`
   Body: 
   ```
