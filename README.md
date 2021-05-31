@@ -148,9 +148,9 @@ To get the user info along with token, follow these
 
 ### 3. logout:
 ---
-  Api endpoint: `/dj-rest-auth/logout/ (POST)`
-  Body: json
-  > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True` 
+  Api endpoint: `/dj-rest-auth/logout/ (POST)`  
+  Body: json  
+  > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True`  
   to use GET instead of POST
 
 ### 4. Password reset:
@@ -160,7 +160,8 @@ To get the user info along with token, follow these
   Body (json): `{ email: "user email" }`
   Sample output: `{ "detail": "Password reset e-mail has been sent." }`
   
-  On success api call, an email will be sent with reset url like below `protocol://domain/reset/uid/token/`.
+  On success api call, an email will be sent with reset url like below  
+  `protocol://domain/reset/uid/token/`.
   ```
   Dear Gopal,
 
@@ -171,7 +172,7 @@ To get the user info along with token, follow these
   The localhost:3000 team
   ```
 
-  On click of the link this email, **`frontend application should handle this`**.
+  On click of the link this email, **`frontend application should handle this`**.  
   Need to extract uid, token from the url andmake an api call  
   to password reset confirm using below api and payload.
   
