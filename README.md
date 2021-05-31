@@ -38,7 +38,7 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
 ### 1. Registration api:
 ---
 1. install `django-allauth` using `pip install 'dj-rest-auth[with_social]'`
-2. in settings.py
+2. in settings.py, add these below
     ```
     INSTALLED_APPS = (
         ...,
@@ -60,8 +60,8 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
     ]
     ```
     #### Testing:
-    endpoint: `/dj-rest-auth/registration/ (POST)`
-    body: json
+    endpoint: `/dj-rest-auth/registration/ (POST)`  
+    body: json  
     ```
     {
         username: ""
@@ -70,14 +70,13 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
         password2: ""
     }
     ```
-    Sample output: 
-    `{key: 'token string'}`
+    Sample output: `{key: 'token string'}`
     
 ### 2. Login api:
 ---
 To get the user info along with token, follow these
 
-1.  in settings.py:
+1.  in settings.py, adde these below:
     ```
     # To use token authentication
     REST_FRAMEWORK = {
@@ -99,8 +98,8 @@ To get the user info along with token, follow these
       'allauth.account.auth_backends.AuthenticationBackend',
     ]
     ```
-2.  Define custom Token Serializer 
-example path file path: `project/app/serializers.py`
+2.  Define custom Token Serializer.  
+    example path file path: `project/app/serializers.py`
     ```
     from rest_framework import serializers
     from django.contrib.auth import get_user_model
@@ -127,7 +126,7 @@ example path file path: `project/app/serializers.py`
     }
     ```
     ### Testing login api
-    **endpoint:** `/dj-rest-auth/login/ (POST)`
+    **endpoint:** `/dj-rest-auth/login/ (POST)`  
     body: json
     ```
     {
@@ -179,7 +178,7 @@ example path file path: `project/app/serializers.py`
 ### 5. Password reset confirm
 ---
 
-  Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`
+  Api endpoint: `/dj-rest-auth/password/reset/confirm/ (POST)`  
   Body: 
   ```
   {
