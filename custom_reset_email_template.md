@@ -3,6 +3,7 @@
 
 package: `dj-rest-auth`  
 Reference:  
+[My docs: dj-rest-auth endpoints](https://github.com/gopal1166/django-auth-api)
 [PasswordResetSerializer](https://github.com/Tivix/django-rest-auth/blob/master/rest_auth/serializers.py)  ,  
 [PasswordResetForm](https://docs.djangoproject.com/en/1.8/_modules/django/contrib/auth/forms/)  
 
