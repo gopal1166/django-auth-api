@@ -73,7 +73,7 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
     ```
     Sample output: `{key: 'token string'}`    
     
-    
+&nbsp;
 ### 2. Login api:
 ---
 To get the user info along with token, follow these
@@ -148,7 +148,7 @@ To get the user info along with token, follow these
     }
     ```    
     
-    
+&nbsp;   
 ### 3. logout:
 ---
   Api endpoint: `/dj-rest-auth/logout/ (POST)`  
@@ -156,7 +156,7 @@ To get the user info along with token, follow these
   > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True`  
   to use GET instead of POST    
   
-  
+&nbsp;  
 ### 4. Password reset:
 ---
   #### Testing:  
@@ -180,7 +180,7 @@ To get the user info along with token, follow these
   Need to extract `uid, token` from the url and make  
   password reset confirm api call, using below api and payload.    
   
-  
+&nbsp;
 ### 5. Password reset confirm
 ---
 
