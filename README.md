@@ -93,11 +93,11 @@ To get the user info along with token, follow these
     ACCOUNT_USERNAME_REQUIRED = False
 
     AUTHENTICATION_BACKENDS = [
-        # Needed to login by username in Django admin, regardless of allauth
-        'django.contrib.auth.backends.ModelBackend',
-    
-        # allauth specific authentication methods, such as login by e-mail
-        'allauth.account.auth_backends.AuthenticationBackend',
+      # Needed to login by username in Django admin, regardless of allauth
+      'django.contrib.auth.backends.ModelBackend',
+  
+      # allauth specific authentication methods, such as login by e-mail
+      'allauth.account.auth_backends.AuthenticationBackend',
     ]
     ```
 2.  Define custom Token Serializer 
@@ -152,7 +152,8 @@ example path file path: `project/app/serializers.py`
 ---
   Api endpoint: `/dj-rest-auth/logout/ (POST)`
   Body: json
-  > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True` to use GET instead of POST
+  > Note(Not Recommended): in settings.py, can set `ACCOUNT_LOGOUT_ON_GET = True` 
+  to use GET instead of POST
 
 ### 4. Password reset:
 ---
@@ -173,7 +174,8 @@ example path file path: `project/app/serializers.py`
   ```
 
   On click of the link this email, **`frontend application should handle this`**.
-  Need to extract uid, token from the url and make an api call to password reset confirm using below api and payload.
+  Need to extract uid, token from the url andmake an api call  
+  to password reset confirm using below api and payload.
   
 ### 5. Password reset confirm
 ---
