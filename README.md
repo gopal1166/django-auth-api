@@ -82,14 +82,14 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
 1. install `django-allauth` using `pip install 'dj-rest-auth[with_social]'`
 2. in settings.py, add these below
     ```
-    INSTALLED_APPS = (
+    INSTALLED_APPS = [
         ...,
         'django.contrib.sites',
         'allauth',
         'allauth.account',
         'allauth.socialaccount',
         'dj_rest_auth.registration',
-    )
+    ]
     
     SITE_ID = 1
     ```
