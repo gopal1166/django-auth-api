@@ -69,10 +69,10 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
       EMAIL_USE_TLS = True
       EMAIL_HOST = 'smtp.gmail.com'
       EMAIL_PORT = 587
-      EMAIL_HOST_USER = 'vgopal1166@gmail.com'
+      EMAIL_HOST_USER = 'your email'
       EMAIL_HOST_PASSWORD = 'ujlmjkfvutzjhghf'
       
-      DEFAULT_FROM_EMAIL = 'vgopal1166@gmail.com'
+      DEFAULT_FROM_EMAIL = 'your email'
     ```
   5. Migrate your database: ```$ python manage.py migrate```  
   
