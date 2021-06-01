@@ -15,7 +15,8 @@ requirements: `wheel django==3.2.3  psycopg2==2.8.6 djangorestframework==3.12.4`
 1. To install, execute these: 
     ```
       $ pip install wheel
-      $ pip install django==3.2.3  psycopg2==2.8.6 djangorestframework==3.12.4```
+      $ pip install django==3.2.3  psycopg2==2.8.6 djangorestframework==3.12.4
+    ```
 2. Add `dj_rest_auth` app to INSTALLED_APPS in your django settings.py:
     ```
     INSTALLED_APPS = (
