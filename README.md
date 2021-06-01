@@ -7,12 +7,15 @@
 4. password reset confirm
 
 package used: `dj-rest-auth`
-requirements: `django==3.2.3  psycopg2==2.8.6 djangorestframework==3.12.4`
+requirements: `wheel django==3.2.3  psycopg2==2.8.6 djangorestframework==3.12.4`
 [Official Website](https://dj-rest-auth.readthedocs.io/en/latest/)  
 
 ### Installation:
 ---
-1. install package: `$ pip install dj-rest-auth`
+1. To install, execute these: 
+    ```
+      $ pip install wheel
+      $ pip install django==3.2.3  psycopg2==2.8.6 djangorestframework==3.12.4```
 2. Add `dj_rest_auth` app to INSTALLED_APPS in your django settings.py:
     ```
     INSTALLED_APPS = (
@@ -174,7 +177,8 @@ To get the user info along with token, follow these
 &nbsp;  
 ### 4. Password reset:
 ---  
-
+1.  [Click here on gmail lesssecureapps](https://myaccount.google.com/lesssecureapps) and make sure Allow less secure apps: `ON`  
+2.  [Click here on google security](https://myaccount.google.com/security) and turn `ON` the 2-Step Verification and click on `App Passwords` to create one for the django project.
 * Must add the `path('', include('django.contrib.auth.urls')),` in urlpatterns in urls.py
 
   ##### Testing:  
