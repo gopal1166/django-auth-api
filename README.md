@@ -189,7 +189,8 @@ To get the user info along with token, follow these
 ### 4. Password reset:
 ---  
 
-* Must add the `path('', include('django.contrib.auth.urls')),` in urlpatterns in urls.py
+1.  Must add the `path('', include('django.contrib.auth.urls')),` in urlpatterns in urls.py  
+2.  open `admin panel`, goto sites, change site name from `example.com` to `localhost:3000`
 
   ##### Testing:  
   Api endpoint: `/dj-rest-auth/password/reset/ (POST)`  
