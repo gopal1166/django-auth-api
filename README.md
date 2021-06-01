@@ -77,7 +77,11 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
 5.  [Click here on gmail lesssecureapps](https://myaccount.google.com/lesssecureapps) and make sure Allow less secure apps: `ON`  
 6.  [Click here on google security](https://myaccount.google.com/security) and turn `ON` the 2-Step Verification and click on `App Passwords` to create one for the django project.  
 
-  7. Migrate your database: ```$ python manage.py migrate```  
+7.  Migrate your database: 
+    ```
+      $ python manage.py makemigrations
+      $ python manage.py migrate
+    ```  
   
 &nbsp;
 ### 1. Registration api:
