@@ -100,7 +100,9 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
         path('dj-rest-auth/', include('dj_rest_auth.urls')),
         path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls'))
     ]
-    ```
+    ```  
+4. migrate using `python manage.py migrarte`  
+    &nbsp;
     #### Testing:
     endpoint: `/dj-rest-auth/registration/ (POST)`  
     body: json  
