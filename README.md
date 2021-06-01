@@ -129,7 +129,7 @@ Make sure also you have installed `rest_framework` and `rest_framework.authtoken
 To get the user info along with token, follow these
 
 2.  Define custom Token Serializer in the root folder of project.  
-    example path file path: `project_name/project_name/serializers.py`
+    example path file path: `et_backend/et_backend/serializers.py`
     ```
     from rest_framework import serializers
     from django.contrib.auth import get_user_model
@@ -152,7 +152,7 @@ To get the user info along with token, follow these
 3.  wire it to `TOKEN_SERIALIZER` in settings.py
     ```
     REST_AUTH_SERIALIZERS = {
-        'TOKEN_SERIALIZER': 'project_name.serializers.MyCustomTokenSerializer'
+        'TOKEN_SERIALIZER': 'et_backend.serializers.MyCustomTokenSerializer'
     }
     ```
     ##### Testing login api:    
